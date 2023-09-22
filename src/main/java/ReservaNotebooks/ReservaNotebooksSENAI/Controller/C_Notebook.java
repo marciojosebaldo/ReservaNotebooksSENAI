@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class C_Notebook {
 
-    @GetMapping("cadastro/notebook")
+    @GetMapping("/cadastro/notebook")
     public String getCadNotebook() {
         return "cadastros/notebook";
     }
