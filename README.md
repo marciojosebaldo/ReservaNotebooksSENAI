@@ -7,5 +7,5 @@ CREATE TABLE notebook (
 	id serial primary key, 
 	numero int not null,
 	patrimonio bigint not null unique,
-	ativo bool)
+	ativo bool default true)
 
