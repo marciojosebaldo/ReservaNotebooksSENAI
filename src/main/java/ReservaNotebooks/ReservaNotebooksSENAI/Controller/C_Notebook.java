@@ -1,11 +1,8 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
-import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Notebook;
 import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Notebook;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class C_Notebook {
@@ -16,9 +13,11 @@ public class C_Notebook {
     }
 
     @PostMapping("/cadastros/notebook")
+    @ResponseBody
+
     public String postCadNotebook(@RequestParam("numero") String numero,
                                   @RequestParam("patrimonio") String patrimonio) {
 
-        return null;
+        return S_Notebook.cadastrarNotebook(numero, patrimonio);
     }
 }
