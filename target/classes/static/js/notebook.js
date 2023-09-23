@@ -2,11 +2,11 @@ $("#enviar").click(enviaCadastroNotebook);
 
     function enviaCadastroNotebook() {
         let numero = $("#numero").val();
-        let patrimonio = $("patrimonio").val();
+        let patrimonio = $("#patrimonio").val();
 
         $.ajax({
             type: "POST",
-            url: "/cadastro/notebook",
+            url: "/cadastros/notebook",
             data: {
                 numero: numero,
                 patrimonio: patrimonio

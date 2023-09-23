@@ -13,7 +13,7 @@ public class S_Notebook {
         this.r_notebook = r_notebook;
     }
 
-    public static M_Notebook cadastrarNotebook(String numero, String patrimonio) {
+    public static void cadastrarNotebook(String numero, String patrimonio) {
         boolean podeSalvar = true;
         String mensagem = "";
 
@@ -28,12 +28,12 @@ public class S_Notebook {
         }
 
         if (podeSalvar) {
-            int numeroInteiro = Integer.parseInt(numero);
-            Long patrimonioInteiro = Long.parseLong(patrimonio);
             M_Notebook m_notebook = new M_Notebook();
+            int numeroInteiro = Integer.parseInt(numero);
+            Long patrimonioLongo = Long.parseLong(patrimonio);
             m_notebook.setNumero(numeroInteiro);
-            m_notebook.setPatrimonio(patrimonioInteiro);
+            m_notebook.setPatrimonio(patrimonioLongo);
+            mensagem = "Dados salvos com sucesso";
         }
-        return M_Notebook m_notebook = M_Notebook();
     }
 }
