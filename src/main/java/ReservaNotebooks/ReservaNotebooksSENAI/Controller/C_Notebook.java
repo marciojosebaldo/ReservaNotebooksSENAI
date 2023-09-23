@@ -19,6 +19,6 @@ public class C_Notebook {
     public String postCadNotebook(@RequestParam("numero") String numero,
                                   @RequestParam("patrimonio") String patrimonio) {
 
-        M_Notebook m_notebook = S_Notebook.cadastrarNotebook(numero, patrimonio);
+        return null;
     }
 }

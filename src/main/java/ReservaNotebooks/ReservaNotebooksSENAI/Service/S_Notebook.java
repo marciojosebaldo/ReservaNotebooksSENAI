@@ -13,27 +13,26 @@ public class S_Notebook {
         this.r_notebook = r_notebook;
     }
 
-    public static void cadastrarNotebook(String numero, String patrimonio) {
+    public String cadastrarNotebook(String numero, String patrimonio) {
         boolean podeSalvar = true;
         String mensagem = "";
+        numero = S_Generico.limparNumero(numero);
+        patrimonio = S_Generico.limparNumero(patrimonio);
 
-        if(numero == null || numero.trim().equals("")) {
-            mensagem = "Campo número não pode ser vazio";
+        if(S_Generico.campoVazio(numero)) {
+            mensagem += "Informe o campo número";
             podeSalvar = false;
         }
-
-        if (patrimonio == null || patrimonio.trim().equals("")) {
-            mensagem = "Campo patrimônio não pode ser vazio";
+        if (S_Generico.campoVazio(patrimonio)) {
+            mensagem += "Informe o campo patrimônio";
             podeSalvar = false;
         }
-
         if (podeSalvar) {
             M_Notebook m_notebook = new M_Notebook();
-            int numeroInteiro = Integer.parseInt(numero);
-            Long patrimonioLongo = Long.parseLong(patrimonio);
-            m_notebook.setNumero(numeroInteiro);
-            m_notebook.setPatrimonio(patrimonioLongo);
+            m_notebook.setNumero(Integer.parseInt(numero));
+            m_notebook.setPatrimonio(Long.parseLong(patrimonio));
             mensagem = "Dados salvos com sucesso";
         }
+        return mensagem;
     }
 }
