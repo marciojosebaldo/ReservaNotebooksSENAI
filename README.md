@@ -9,3 +9,10 @@ CREATE TABLE notebook (
 	patrimonio bigint not null unique,
 	ativo bool default true)
 
+CREATE TABLE usuario (
+	id serial primary key,
+	nome VARCHAR(255) not null,
+	ocupacao VARCHAR(255),
+	matricula bigint not null unique, 
+	email VARCHAR(255))
+
