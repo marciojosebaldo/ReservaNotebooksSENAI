@@ -14,5 +14,6 @@ CREATE TABLE usuario (
 	nome VARCHAR(255) not null,
 	ocupacao VARCHAR(255),
 	matricula bigint not null unique, 
-	email VARCHAR(255))
+	email VARCHAR(255),
+	senha VARCHAR(255))
 

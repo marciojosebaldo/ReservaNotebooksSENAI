@@ -13,6 +13,8 @@ public class M_Usuario {
     private Long matricula;
     private String email;
 
+    private String senha;
+
     public Long getId() {
         return id;
     }
@@ -51,5 +53,13 @@ public class M_Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

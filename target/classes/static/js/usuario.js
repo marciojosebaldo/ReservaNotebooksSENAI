@@ -8,7 +8,7 @@ function enviaCadastroUsuario() {
 
     $.ajax({
         type: "POST",
-        url: "/cadastros/usuario",
+        url: "/Cadastros/usuario",
         data: {
             nome: nome,
             ocupacao: ocupacao,

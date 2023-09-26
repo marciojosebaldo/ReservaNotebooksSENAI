@@ -14,7 +14,7 @@ public class S_Usuario {
         this.r_usuario = r_usuario;
     }
 
-    public static String cadastrarUsuario(String nome, String ocupacao, String matricula, String email) {
+    public static String cadastrarUsuario(String nome, String ocupacao, String matricula, String email, String senha) {
         boolean podeSalvar = true;
         String mensagem = "";
         matricula = S_Generico.limparNumero(matricula);
@@ -39,12 +39,15 @@ public class S_Usuario {
             podeSalvar = false;
         }
 
+        senha = S_GeradorSenha.geradorSenha(5,3,2);
+
         if(podeSalvar) {
             M_Usuario m_usuario = new M_Usuario();
             m_usuario.setNome(nome);
             m_usuario.setOcupacao(ocupacao);
             m_usuario.setMatricula(Long.parseLong(matricula));
             m_usuario.setEmail(email);
+            m_usuario.setSenha(senha);
 
             try {
                 r_usuario.save(m_usuario);

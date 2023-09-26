@@ -7,8 +7,7 @@ import java.util.Random;
 @Service
 public class S_GeradorSenha {
 
-    public static String enigma(int qtdLetras, int qtdNumeros, int qtdEspeciais) {
-
+    public static String geradorSenha(int qtdLetras, int qtdNumeros, int qtdEspeciais) {
         final char[] CARACTERES_TEXTO = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
         final char[] CARACTERES_ESPECIAIS = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".toCharArray();
         final char[] CARACTERES_NUMERICOS = "0123456789".toCharArray();
