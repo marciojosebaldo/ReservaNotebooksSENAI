@@ -9,11 +9,13 @@ public class M_Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String ocupacao;
+    private Long ocupacao;
     private Long matricula;
     private String email;
 
     private String senha;
+
+    private boolean ativo;
 
     public Long getId() {
         return id;
@@ -31,11 +33,11 @@ public class M_Usuario {
         this.nome = nome;
     }
 
-    public String getOcupacao() {
+    public Long getOcupacao() {
         return ocupacao;
     }
 
-    public void setOcupacao(String ocupacao) {
+    public void setOcupacao(Long ocupacao) {
         this.ocupacao = ocupacao;
     }
 
@@ -61,5 +63,13 @@ public class M_Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }

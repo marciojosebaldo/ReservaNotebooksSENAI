@@ -9,11 +9,18 @@ CREATE TABLE notebook (
 	patrimonio bigint not null unique,
 	ativo bool default true)
 
-CREATE TABLE usuario (
+CREATE TABLE usuario ( 
 	id serial primary key,
 	nome VARCHAR(255) not null,
-	ocupacao VARCHAR(255),
-	matricula bigint not null unique, 
-	email VARCHAR(255),
-	senha VARCHAR(255))
+	ocupacao bigint not null,
+	matricula bigint not null unique,
+	email VARCHAR(255) not null,
+	senha VARCHAR(255) not null,
+	ativo bool,
+	foreign key (ocupacao) references ocupacao(id))
+
+CREATE TABLE ocupacao (
+	id serial primary key,
+	nome varchar(255)
+)
 
