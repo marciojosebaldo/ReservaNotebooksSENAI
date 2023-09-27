@@ -44,7 +44,7 @@ public class S_Usuario {
         if(podeSalvar) {
             M_Usuario m_usuario = new M_Usuario();
             m_usuario.setNome(nome);
-            m_usuario.setOcupacao(ocupacao);
+            m_usuario.setOcupacao(Long.parseLong(ocupacao));
             m_usuario.setMatricula(Long.parseLong(matricula));
             m_usuario.setEmail(email);
             m_usuario.setSenha(senha);
