@@ -12,13 +12,15 @@ public class S_Login {
         this.r_usuario = r_usuario;
     }
 
-    /*
-    public static M_Usuario validaLogin(String matricula) {
-        Long lMatricula;
+
+    public static M_Usuario validaLogin(String matricula, String senha) {
+        Long validaMatricula;
         if(S_Generico.limparNumero(matricula).equals("")) {
-            lMatricula = 0;
+            validaMatricula = null;
+        } else {
+            validaMatricula = Long.valueOf(S_Generico.limparNumero(matricula));
         }
+        return r_usuario.findByMatricula(validaMatricula, senha);
     }
 
-     */
 }

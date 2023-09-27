@@ -6,7 +6,7 @@ $("#btnLogin").click(fazerLogin);
 
         $.ajax({
             type: "POST",
-            url: "",
+            url: "/login",
             data: {
                 matricula: matricula,
                 senha: senha
