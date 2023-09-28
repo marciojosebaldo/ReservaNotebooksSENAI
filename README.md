@@ -24,3 +24,4 @@ CREATE TABLE ocupacao (
 	nome varchar(255)
 )
 
+INSERT INTO ocupacao (nome) VALUES ('Gestor(a)'), ('Bibliotecário(a)'), ('Professor(a)')

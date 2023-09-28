@@ -8,7 +8,7 @@ function enviaCadastroUsuario() {
 
     $.ajax({
         type: "POST",
-        url: "/Cadastros/usuario",
+        url: "/cadastro/usuario",
         data: {
             nome: nome,
             ocupacao: ocupacao,
@@ -19,8 +19,7 @@ function enviaCadastroUsuario() {
             alert(data);
         },
         error: function(){
-            alert("Falha na comunicação com o servidor");
+            alert("Falha na comunicação com o servidor.");
         }
-
     });
 }

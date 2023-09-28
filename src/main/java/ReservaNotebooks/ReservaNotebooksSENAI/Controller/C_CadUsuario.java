@@ -1,9 +1,7 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
 import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_GeradorSenha;
-import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Notebook;
 import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Usuario;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,10 +13,10 @@ public class C_CadUsuario {
 
     @GetMapping("/cadastro/usuario")
     public String getCadastro() {
-        return "cadastros/usuario";
+        return "Cadastros/usuario";
     }
 
-    @PostMapping("/Cadastros/usuario")
+    @PostMapping("/cadastro/usuario")
     @ResponseBody
 
     public String postCadUsuario(@RequestParam("nome") String nome,
@@ -26,8 +24,6 @@ public class C_CadUsuario {
                                  @RequestParam("matricula") String matricula,
                                  @RequestParam("email") String email) {
 
-        String senha = S_GeradorSenha.geradorSenha(5,3,2);
-
-        return S_Usuario.cadastrarUsuario(nome, ocupacao, matricula, email, senha);
+        return S_Usuario.cadastrarUsuario(nome, ocupacao, matricula, email);
     }
 }
