@@ -20,22 +20,22 @@ public class S_Usuario {
         ocupacao = S_Generico.limparNumero(ocupacao);
 
         if (S_Generico.campoVazio(nome)) {
-            mensagem += "Informe o campo nome";
+            mensagem += "Informe o campo nome \n";
             podeSalvar = false;
         }
 
         if (S_Generico.campoVazio(ocupacao)) {
-            mensagem += "A ocupação precisa ser selecionada";
+            mensagem += "A ocupação precisa ser selecionada \n";
             podeSalvar = false;
         }
 
         if (S_Generico.campoVazio(matricula)) {
-            mensagem += "Informe o campo matrícula";
+            mensagem += "Informe o campo matrícula \n";
             podeSalvar = false;
         }
 
         if (S_Generico.campoVazio(email)) {
-            mensagem += "Informe o campo e-mail";
+            mensagem += "Informe o campo e-mail \n";
             podeSalvar = false;
         }
 
