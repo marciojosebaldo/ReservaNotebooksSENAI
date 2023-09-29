@@ -13,7 +13,6 @@ public class C_Login {
     }
 
     @PostMapping("/Login/login")
-    @ResponseBody
 
     public String postLogin(@RequestParam("matricula") String matricula,
                             @RequestParam("senha") String senha,
