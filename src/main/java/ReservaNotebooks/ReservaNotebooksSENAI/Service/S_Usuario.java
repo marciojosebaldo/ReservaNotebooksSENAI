@@ -2,8 +2,10 @@ package ReservaNotebooks.ReservaNotebooksSENAI.Service;
 
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import ReservaNotebooks.ReservaNotebooksSENAI.Repository.R_Usuario;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 public class S_Usuario {
@@ -13,6 +15,22 @@ public class S_Usuario {
     public S_Usuario(R_Usuario r_usuario) {
         this.r_usuario = r_usuario;
     }
+
+    public static M_Usuario validaLogin(@RequestParam("matricula") String matricula,
+                                        @RequestParam("senha") String senha){
+
+        matricula = S_Generico.limparNumero(matricula);
+
+        if(S_Generico.campoVazio(matricula)) {
+            return null;
+        } else if(S_Generico.campoVazio(senha)) {
+            return null;
+        }
+
+        return r_usuario.buscarUsuarioPorMatriculaESenha(Long.parseLong(matricula), senha);
+
+    }
+
     public static String cadastrarUsuario(String nome, String ocupacao, String matricula, String email) {
         boolean podeSalvar = true;
         String mensagem = "";
@@ -57,5 +75,4 @@ public class S_Usuario {
         }
         return mensagem;
     }
-
 }

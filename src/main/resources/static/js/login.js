@@ -12,10 +12,12 @@ $("#btnLogin").click(fazerLogin);
                 senha: senha
             },
             success: function(data){
-                alert(data);
+                if(data) {
+                    window.location.href="/home"; // Isso é a URL que será configurada no GetMapping
+                }
             },
             error: function() {
-                alert("Falha na comunicação com o servidor!");
+                alert("Falha na comunicação");
             }
         });
     }
