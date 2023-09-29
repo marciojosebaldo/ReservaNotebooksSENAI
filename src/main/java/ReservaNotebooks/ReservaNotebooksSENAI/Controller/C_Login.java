@@ -12,7 +12,8 @@ public class C_Login {
         return "Login/login";
     }
 
-    @PostMapping("/Login/login")
+    @PostMapping("/Home/home")
+    @ResponseBody
 
     public String postLogin(@RequestParam("matricula") String matricula,
                             @RequestParam("senha") String senha,
@@ -21,7 +22,7 @@ public class C_Login {
         session.setAttribute("matricula", S_Login.validaLogin(matricula, senha));
 
         if(session.getAttribute("matricula") != null) {
-            return "Home/home";
+            return "redirect:/Home/home";
         } else {
             return "redirect/";
         }
