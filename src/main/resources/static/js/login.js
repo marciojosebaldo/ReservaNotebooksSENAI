@@ -6,14 +6,14 @@ $("#btnLogin").click(fazerLogin);
 
         $.ajax({
             type: "POST",
-            url: "/Login/login",
+            url: "/login",
             data: {
                 matricula: matricula,
                 senha: senha
             },
             success: function(data){
                 if(data) {
-                    window.location.href="/login"; // Isso é a URL que será configurada no GetMapping
+                    window.location.href="/home"; // Isso é a URL que será configurada no GetMapping
                 }
             },
             error: function() {
