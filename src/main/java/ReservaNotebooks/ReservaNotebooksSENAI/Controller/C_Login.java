@@ -12,7 +12,7 @@ public class C_Login {
         return "Login/login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/Login/login")
     @ResponseBody
 
     public boolean validarLogin(@RequestParam("matricula") String matricula,

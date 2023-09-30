@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class C_Home {
-    @GetMapping("Home/home")
+    @GetMapping("/home")
     public String getHome(HttpSession session) {
         if (session.getAttribute("matricula") != null) {
             return "Home/home";
