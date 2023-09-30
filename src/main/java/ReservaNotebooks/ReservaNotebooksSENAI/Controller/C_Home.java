@@ -11,10 +11,8 @@ public class C_Home {
     @GetMapping("/home")
     public String getHome(HttpSession session,
                           Model model) {
-        Object objUsuario = session.getAttribute("usuario");
-        if (objUsuario != null) {
-            objUsuario = (M_Usuario) objUsuario;
-            model.addAttribute("nome", ((M_Usuario) objUsuario).getNome());
+        if (session.getAttribute("usuario") != null) {
+            model.addAttribute("usuario", session.getAttribute("usuario"));
             return "Home/home";
         } else {
             return "redirect:/"; // Isso faz retornar para o login
