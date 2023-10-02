@@ -31,7 +31,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-                    <li th:if="${usuario.cargo == 1}" class="nav-item">
+                    <li th:if="${usuario.ocupacao == 1}" class="nav-item">
                         <a class="nav-link" href="#">Cadastro de Notebooks</a>
                     </li>
 <!--                    <li class="nav-item dropdown">-->
@@ -53,6 +53,7 @@
 <!--                    </li>-->
                 </ul>
                 <h4 th:text="${'Bem-vindo(a): ' + usuario.nome}"></h4>
+                <a href="/logout" class="btn btn-danger text-end">Sair</a>
             </div>
         </div>
     </nav>

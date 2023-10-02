@@ -7,7 +7,14 @@ CREATE TABLE notebook (
 	id serial primary key, 
 	numero int not null,
 	patrimonio bigint not null unique,
-	ativo bool default true)
+	ativo bool default true);
+
+CREATE TABLE ocupacao (
+	id serial primary key,
+	nome varchar(255)
+);
+
+INSERT INTO ocupacao (nome) VALUES ('Gestor(a)'), ('Bibliotecário(a)'), ('Professor(a)');
 
 CREATE TABLE usuario ( 
 	id serial primary key,
@@ -17,11 +24,4 @@ CREATE TABLE usuario (
 	email VARCHAR(255) not null,
 	senha VARCHAR(255) not null,
 	ativo bool,
-	foreign key (ocupacao) references ocupacao(id))
-
-CREATE TABLE ocupacao (
-	id serial primary key,
-	nome varchar(255)
-)
-
-INSERT INTO ocupacao (nome) VALUES ('Gestor(a)'), ('Bibliotecário(a)'), ('Professor(a)')
+	foreign key (ocupacao) references ocupacao(id));

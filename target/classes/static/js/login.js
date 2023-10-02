@@ -13,7 +13,7 @@ $("#btnLogin").click(fazerLogin);
             },
             success: function(data){
                 if(data) {
-                    window.location.href="/teste"; // Isso é a URL que será configurada no GetMapping
+                    window.location.href="/home"; // Isso é a URL que será configurada no GetMapping
                 }
             },
             error: function() {

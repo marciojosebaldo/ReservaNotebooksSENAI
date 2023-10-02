@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class C_Login {
     @GetMapping("/")
-    public String getLogin() {
-        return "Login/login";
+    public String getLogin(HttpSession session) {
+        if(session.getAttribute("usuario") != null) {
+            return "redirect:/home";
+        } else {
+            return "Login/login";
+        }
     }
 
     @PostMapping("/login")
@@ -25,5 +29,11 @@ public class C_Login {
             return true;
         }
         return false;
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.setAttribute("usuario", null);
+        return "redirect:/";
     }
 }
