@@ -19,6 +19,8 @@ public class S_Usuario {
     public static M_Usuario validaLogin(@RequestParam("matricula") String matricula,
                                         @RequestParam("senha") String senha){
 
+        String mensagem;
+
         matricula = S_Generico.limparNumero(matricula);
 
         if(S_Generico.campoVazio(matricula)) {
@@ -28,7 +30,6 @@ public class S_Usuario {
         }
 
         return r_usuario.buscarUsuarioPorMatriculaESenha(Long.parseLong(matricula), senha);
-
     }
 
     public static String cadastrarUsuario(String nome, String ocupacao, String matricula, String email) {
