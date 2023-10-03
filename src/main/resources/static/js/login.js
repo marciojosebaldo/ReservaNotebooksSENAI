@@ -4,6 +4,7 @@ $("#btnLogin").click(fazerLogin);
 $("#matricula").focus();
 
 // Prática de pular de campo com a tecla Enter
+// A função só será acionada ao soltar a tecla Enter
 $("#matricula").keyup(function(event){
     if(event.key === "Enter") {
         $("#senha").focus();
