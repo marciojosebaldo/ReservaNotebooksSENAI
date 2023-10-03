@@ -1,5 +1,8 @@
 $("#btnLogin").click(fazerLogin);
 
+// Já deixa o curso na matrícula
+$("#matricula").focus();
+
 // Prática de pular de campo com a tecla Enter
 $("#matricula").keyup(function(event){
     if(event.key === "Enter") {
