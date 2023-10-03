@@ -1,5 +1,18 @@
 $("#btnLogin").click(fazerLogin);
 
+// Prática de pular de campo com a tecla Enter
+$("#matricula").keyup(function(event){
+    if(event.key === "Enter") {
+        $("#senha").focus();
+    }
+});
+
+$("#senha").keyup(function(event){
+    if(event.key === "Enter") {
+        fazerLogin();
+    }
+});
+
     function fazerLogin() {
         let matricula = $("#matricula").val();
         let senha = $("#senha").val();
