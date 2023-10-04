@@ -25,3 +25,5 @@ CREATE TABLE usuario (
 	senha VARCHAR(255) not null,
 	ativo bool,
 	foreign key (ocupacao) references ocupacao(id));
+
+INSERT INTO usuario (nome, ocupacao, matricula, email, senha, ativo) VALUES ('marcio', 1, 123, 'marcio@marcio', '123', true);
