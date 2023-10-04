@@ -34,6 +34,6 @@ public class C_Login {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.setAttribute("usuario", null);
-        return "redirect:/";
+        return "redirect:/home";
     }
 }

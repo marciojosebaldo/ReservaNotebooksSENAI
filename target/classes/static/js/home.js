@@ -12,7 +12,7 @@ $("#btnSair").click(function(event) {
       cancelButtonText: '<i class="fa-solid fa-thumbs-down"></i> Não'
     }).then((result) => {
       if (result.isConfirmed) {
-          $.get("/logout", function(data));
+          window.location.href="/logout";
       }
     })
 });
