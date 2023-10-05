@@ -9,8 +9,6 @@ function controleDeRotas(url){
             // Definir as ações dos componentes
             $("#enviar").click(enviaCadastroNotebook);
             break;
-
-        case
     }
 }
 
