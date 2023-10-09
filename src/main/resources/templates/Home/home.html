@@ -36,10 +36,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
 <!--    Scripts Autorais-->
     <script src="/js/home.js" defer></script>
     <script src="/js/routes.js"></script>
+    <script th:if="${usuario.ocupacao == 1}" src="/js/notebook.js"></script>
 
     <style type="text/css">
         h4{
             color: #fff;
+            margin-right: 1em;
         }
     </style>
     <title>Página Inicial</title>
@@ -84,5 +86,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
         </div>
     </div>
 </nav>
+<div id="mainContainer" class="container">
+</div>
 </body>
 </html>
