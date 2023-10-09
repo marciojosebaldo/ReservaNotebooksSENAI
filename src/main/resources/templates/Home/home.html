@@ -37,6 +37,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
     <script src="/js/home.js" defer></script>
     <script src="/js/routes.js"></script>
     <script th:if="${usuario.ocupacao == 1}" src="/js/notebook.js"></script>
+    <script th:if="${usuario.ocupacao == 1}" src="/js/usuario.js"></script>
 
     <style type="text/css">
         h4{
@@ -62,6 +63,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
                 </li>
                 <li th:if="${usuario.ocupacao == 1}" class="nav-item">
                     <a id="cadastroNotebook" class="nav-link" href="/cadastro/notebook">Cadastro de Notebooks</a>
+                    <a id="cadastroUsuario" class="nav-link" href="/cadastro/usuario">Cadastro de Usuário</a>
                 </li>
                 <!--                    <li class="nav-item dropdown">-->
                 <!--                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"-->

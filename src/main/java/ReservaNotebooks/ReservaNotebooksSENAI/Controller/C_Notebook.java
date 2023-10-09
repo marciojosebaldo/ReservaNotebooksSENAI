@@ -9,7 +9,7 @@ public class C_Notebook {
 
     @GetMapping("/cadastro/notebook")
     public String getCadNotebook() {
-        return "cadastros/notebook";
+        return "/Cadastros/notebook";
     }
 
     @PostMapping("/cadastros/notebook")

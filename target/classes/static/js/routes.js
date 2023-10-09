@@ -4,10 +4,22 @@ function controleDeRotas(url){
             gerarSwal(url);
             break;
 
-        case "cadastro/notebook":
+        case "/cadastro/notebook":
             // Renderizar a tela
-            // Definir as ações dos componentes
-            $("#enviar").click(enviaCadastroNotebook);
+            $.get(url, function(data){
+                $('#mainContainer').html(data);
+                // Definir as ações dos componentes
+                $("#enviar").click(enviaCadastroNotebook);
+            });
+            break;
+
+        case "/cadastro/usuario":
+            // Renderiza a tela
+            $.get(url, function(data){
+                $('#mainContainer').html(data);
+                // Defini a ação do componente
+                $("#enviar").click(enviaCadastroUsuario)
+            });
             break;
     }
 }

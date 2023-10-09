@@ -9,5 +9,4 @@ public class ReservaNotebooksSenaiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ReservaNotebooksSenaiApplication.class, args);
 	}
-
 }
