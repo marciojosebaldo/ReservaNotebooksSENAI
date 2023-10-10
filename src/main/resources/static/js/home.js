@@ -29,3 +29,16 @@ function gerarSwal(urlSucesso) {
       }
     });
 }
+
+
+// SweetAlert não implementado
+//function alertaSucesso(mensagem){
+//    Swal.fire({
+//        position: 'top-end',
+//        toast: true,
+//        icon: 'success',
+//        title: mensagem,
+//        showConfirmButton: false,
+//        timer: 2000
+//    });
+//}

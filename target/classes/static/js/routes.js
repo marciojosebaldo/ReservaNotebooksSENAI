@@ -19,6 +19,12 @@ function controleDeRotas(url){
                 $("#enviar").click(enviaCadastroUsuario)
             });
             break;
+
+        case "/home":
+            $.get(url, function(data){
+                $('mainContainer').html(data);
+                $("#home").click()
+            })
     }
 }
 
