@@ -14,10 +14,8 @@ function controleDeRotas(url){
             break;
 
         case "/cadastro/usuario":
-            // Renderiza a tela
             $.get(url, function(data){
                 $('#mainContainer').html(data);
-                // Defini a ação do componente
                 $("#enviar").click(enviaCadastroUsuario)
             });
             break;

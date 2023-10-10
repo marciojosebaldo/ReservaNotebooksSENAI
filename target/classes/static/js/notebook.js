@@ -17,3 +17,10 @@
             }
         });
     }
+
+
+    // Função ainda não foi invocada para limpar os campos após o envio da informação
+    function limparCamposNotebook() {
+        let numero = $("numero").val("");
+        let patrimonio = $("patrimonio").val("");
+    }

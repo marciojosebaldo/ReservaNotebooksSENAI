@@ -1,5 +1,7 @@
 $('a').click(function(event) {
     event.preventDefault();
+    $('a').removeClass('active disabled'); // Remove de todos
+    $(this).addClass('active disabled'); // Adiciona no que foi clicado com a sobrecarga this
     controleDeRotas($(this).attr("href"));
 });
 

@@ -50,7 +50,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">FIEP</a>
+        <a class="navbar-brand">
+            <img src="https://www.sistemafiep.org.br/dbimages/logo-sistema-fiep_213141_img.png"
+            height="40px" width="160px">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -63,6 +66,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
                 </li>
                 <li th:if="${usuario.ocupacao == 1}" class="nav-item">
                     <a id="cadastroNotebook" class="nav-link" href="/cadastro/notebook">Cadastro de Notebooks</a>
+                </li>
+                <li th:if="${usuario.ocupacao == 1}" class="nav-item">
                     <a id="cadastroUsuario" class="nav-link" href="/cadastro/usuario">Cadastro de Usuário</a>
                 </li>
                 <!--                    <li class="nav-item dropdown">-->
