@@ -1,6 +1,5 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
-import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,7 @@ public class C_Home {
 
     @GetMapping("/Home")
     public String getPartialHome(HttpServletRequest request){
-        if(request.getHeader("Referer") != null) { //Se digitar diretamente na URL, retorna nulo a URL. Se clicar no botão, retorna o caminho da URL
+        if(request.getHeader("Referer") != null) {
             return "home/partial_home";
         } else {
             return "redirect:/";

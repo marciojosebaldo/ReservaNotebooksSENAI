@@ -20,11 +20,10 @@ function controleDeRotas(url){
             });
             break;
 
-        case "/home":
-            $.get(url, function(data){
-                $('mainContainer').html(data);
-                $("#home").click()
-            })
+        default:
+        $.get(url, function(data){
+            $('#mainContainer').html(data);
+        });
     }
 }
 

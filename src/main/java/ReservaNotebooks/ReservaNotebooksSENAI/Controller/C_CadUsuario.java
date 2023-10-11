@@ -1,7 +1,7 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
-import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_GeradorSenha;
 import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Usuario;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class C_CadUsuario {
 
     @GetMapping("/cadastro/usuario")
-    public String getCadastro() {
-        return "Cadastros/usuario";
+    public String getCadastro(HttpServletRequest request) {
+        if(request.getHeader("Referer") != null) {
+            return "Cadastros/usuario";
+        } else {
+            return "redirect:/";
+        }
     }
 
     @PostMapping("/cadastro/usuario")
