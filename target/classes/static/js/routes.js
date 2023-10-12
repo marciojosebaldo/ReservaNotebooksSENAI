@@ -22,8 +22,10 @@ function controleDeRotas(url){
 
         case "/edit/usuario":
             $.get(url, function(data){
-                let colNome = data.cargo = 1 ? 'col-8' : 'col-12';
-                let inputNome = '<div class="'+colNome+'">'+
+                let colNome = data.cargo == 1 ? 8 : 12;
+                let colCargo = 12 - colNome;
+                let pagina = '<div class="row">';
+                pagina = '<div class="'+colNome+'">'+
                                 '<div class="input-group has-validation">'+
                                     '<span class="input-group-text"><i class="fa-solid fa-user"></i></span>'+
                                     '<div class="form-floating">'+
@@ -31,10 +33,12 @@ function controleDeRotas(url){
                                         '<label for="nome">Nome</label>'+
                                     '</div>'+
                                     '<div class="invalid-feedback">'+
-                                        'Por favor, informe seu nome.'+
+                                        'Por favor, informe o nome.'+
                                     '</div>'+
                                 '</div>';
-
+                pagina += data.cargo != 1 ? '':''+
+                    '<div class="col-4">'+data.cargo+'</div>';
+                pagina += '</div>'; // Fecha div row
                 $('#mainContainer').html(inputNome);
             });
             break;
