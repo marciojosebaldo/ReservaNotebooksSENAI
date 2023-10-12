@@ -15,8 +15,27 @@ function controleDeRotas(url){
 
         case "/cadastro/usuario":
             $.get(url, function(data){
-                $('#mainContainer').html(data);
-                $("#enviar").click(enviaCadastroUsuario)
+            $('#mainContainer').html(data);
+            $("#enviar").click(enviaCadastroUsuario)
+            });
+        break;
+
+        case "/edit/usuario":
+            $.get(url, function(data){
+                let colNome = data.cargo = 1 ? 'col-8' : 'col-12';
+                let inputNome = '<div class="'+colNome+'">'+
+                                '<div class="input-group has-validation">'+
+                                    '<span class="input-group-text"><i class="fa-solid fa-user"></i></span>'+
+                                    '<div class="form-floating">'+
+                                        '<input type="text" class="form-control" id="nome" placeholder="Nome" required value="'+data.nome+'"'>'+
+                                        '<label for="nome">Nome</label>'+
+                                    '</div>'+
+                                    '<div class="invalid-feedback">'+
+                                        'Por favor, informe seu nome.'+
+                                    '</div>'+
+                                '</div>';
+
+                $('#mainContainer').html(inputNome);
             });
             break;
 
