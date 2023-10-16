@@ -36,12 +36,15 @@ public class C_CadUsuario {
     @GetMapping("/edit/usuario")
     @ResponseBody // Não retorna o padrão, irá retornar o que for passado como JSON
 
-    public M_Usuario getEditUsuario(HttpServletRequest request,
+    public String getEditUsuario(HttpServletRequest request,
                                     HttpSession session) {
         if (request.getHeader("Referer") != null) {
-            M_Usuario dadosRetorno = (M_Usuario) session.getAttribute("usuario");
-            dadosRetorno.setSenha(null);
-            return dadosRetorno;
+            M_Usuario usuario = (M_Usuario) session.getAttribute("usuario");
+            if (usuario.getOcupacao() == 1) {
+                return "viewAdemir";
+            } else {
+                return "Professor";
+            }
         } else {
             return null;
         }
