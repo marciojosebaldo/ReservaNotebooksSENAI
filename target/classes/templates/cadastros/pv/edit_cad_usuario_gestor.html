@@ -1,9 +1,10 @@
+<h1 class="mt-3">Editar Perfil</h1>
 <div class="row">
     <div class="col-5">
         <div class="input-group has-validation">
             <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
             <div class="form-floating">
-                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                <input type="text" th:value="${usuario.nome}" class="form-control" id="nome" placeholder="Nome" required>
                 <label for="nome">Nome</label>
             </div>
             <div class="invalid-feedback">
@@ -15,7 +16,7 @@
         <div class="input-group has-validation">
             <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
             <div class="form-floating">
-                <input type="text" class="form-control" id="email" placeholder="e-Mail" required>
+                <input type="text" th:value="${usuario.email}" class="form-control" id="email" placeholder="e-Mail" required>
                 <label for="email">e-Mail</label>
             </div>
             <div class="invalid-feedback">
@@ -27,7 +28,7 @@
         <div class="input-group has-validation">
             <span class="input-group-text"><i class="fa-regular fa-address-card"></i></span>
             <div class="form-floating">
-                <input type="number" class="form-control" id="matricula" placeholder="Matrícula" required>
+                <input type="number" th:value="${usuario.matricula}" class="form-control" id="matricula" placeholder="Matrícula" required>
                 <label for="matricula">Matrícula</label>
             </div>
             <div class="invalid-feedback">
@@ -38,8 +39,7 @@
     <div class="col-4">
         <div class="form-floating">
             <select class="form-select" id="ocupacao" aria-label="Floating label select example">
-                <option value="" selected disabled>Selecione:</option>
-                <option value="1">Gestor(a)</option>
+                <option selected value="1">Gestor(a)</option>
                 <option value="2">Bibliotecário(a)</option>
                 <option value="3">Professor(a)</option>
             </select>
@@ -47,11 +47,46 @@
         </div>
     </div>
 </div>
+<div class="col-4">
+    <div class="input-group has-validation">
+        <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="senhaAtual" placeholder="Senha atual" required>
+            <label for="senhaAtual">Senha atual</label>
+        </div>
+        <div class="invalid-feedback">
+            Por favor, informe sua senha atual.
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <div class="input-group has-validation">
+        <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="novaSenha" placeholder="Nova senha" required>
+            <label for="novaSenha">Nova senha</label>
+        </div>
+        <div class="invalid-feedback">
+            A nova senha e a confirmação de senha devem ser iguais.
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <div class="input-group has-validation">
+        <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="confSenha" placeholder="Confirmação de nova senha" required>
+            <label for="confSenha">Confirmação de nova senha</label>
+        </div>
+        <div class="invalid-feedback">
+            Por favor, informe a confirmação da nova senha.
+        </div>
+    </div>
+</div>
 <div class="row">
-    <h4>Situação do usuário: </h4>
     <div class="form-check form-switch form-check-reverse">
-        <input class="form-check-input" type="checkbox" id="ativo">
+        <input class="form-check-input" type="checkbox" id="ativo" checked>
         <label class="form-check-label" for="ativo">Ativo</label>
     </div>
 </div>
-<button id="enviar" class="btn btn-success">Cadastrar</button>
+<button id="enviar" class="btn btn-success">Salvar</button>
