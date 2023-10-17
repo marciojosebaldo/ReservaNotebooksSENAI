@@ -24,7 +24,7 @@ function controleDeRotas(url){
             $.get(url, function(data){
                 $('#mainContainer').html(data);
 
-            };
+            });
             break;
 
         default:

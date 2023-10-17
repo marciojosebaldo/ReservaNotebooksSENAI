@@ -41,9 +41,9 @@ public class C_CadUsuario {
         if (request.getHeader("Referer") != null) {
             M_Usuario usuario = (M_Usuario) session.getAttribute("usuario");
             if (usuario.getOcupacao() == 1) {
-                return "viewAdemir";
+                return "/Cadastros/pv/edit_cad_usuario_gestor";
             } else {
-                return "Professor";
+                return "/Cadastros/pv/edit_cad_usuario/default";
             }
         } else {
             return null;
