@@ -26,4 +26,4 @@ CREATE TABLE usuario (
 	ativo bool,
 	foreign key (ocupacao) references ocupacao(id));
 
-INSERT INTO usuario (nome, ocupacao, matricula, email, senha, ativo) VALUES ('marcio', 1, 123, 'marcio@marcio', '123', true);
+INSERT INTO usuario (nome, ocupacao, matricula, email, senha, ativo) VALUES ('marcio', 1, 123, 'marcio@marcio', '123', true), ('lucas', 3, 1234, 'lucas@lucas', '1234', true);

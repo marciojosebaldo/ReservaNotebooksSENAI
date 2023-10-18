@@ -6,10 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class C_CadUsuario {
@@ -44,10 +41,27 @@ public class C_CadUsuario {
             if (usuario.getOcupacao() == 1) {
                 return "/Cadastros/pv/edit_cad_usuario_gestor";
             } else {
-                return "/Cadastros/pv/edit_cad_usuario/default";
+                return "/Cadastros/pv/edit_cad_usuario_default";
             }
         } else {
             return null;
         }
+    }
+
+    @PostMapping("/edit/usuario")
+    // HttpServletRequest garante que a requisição veio do nosso servidor
+    // value="matricula", required = false faz o parâmetro não ser obrigatório o seu envio
+    public void postEditUsuario(HttpServletRequest request,
+                                HttpSession session,
+                                @RequestParam("nome") String nome,
+                                @RequestParam("email") String email,
+                                @RequestParam("senhaAtual") String senhaAtual,
+                                @RequestParam("novaSenha") String novaSenha,
+                                @RequestParam("confSenha") String confSenha,
+                                @RequestParam(value="matricula", required = false) String matricula,
+                                @RequestParam(value="ocupacao", required = false) String ocupacao,
+                                @RequestParam(value="ativo", required = false) String ativo
+                                ) {
+        int a = 1;
     }
 }

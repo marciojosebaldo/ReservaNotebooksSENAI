@@ -15,15 +15,15 @@ function controleDeRotas(url){
 
         case "/cadastro/usuario":
             $.get(url, function(data){
-            $('#mainContainer').html(data);
-            $("#enviar").click(enviaCadastroUsuario)
+                $('#mainContainer').html(data);
+                $("#enviar").click(enviaCadastroUsuario);
             });
         break;
 
         case "/edit/usuario":
             $.get(url, function(data){
                 $('#mainContainer').html(data);
-
+                $("#salvar").click(salvarEditUsuario);
             });
             break;
 
