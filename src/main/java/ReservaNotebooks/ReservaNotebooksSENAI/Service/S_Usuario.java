@@ -82,14 +82,15 @@ public class S_Usuario {
 
         boolean podeSalvar = true;
         String mensagem = "";
-        matricula = S_Generico.limparNumero(matricula);
+        boolean isAdmin = usuario.getOcupacao() == 1;
+        matricula = isAdmin ? S_Generico.limparNumero(matricula) : matricula;
 
         if(senhaAtual.equals(usuario.getSenha())) {
             if(S_Generico.campoVazio(nome)) {
                 podeSalvar = false;
                 mensagem += "O nome precisa ser preenchido";
             }
-            if(S_Generico.campoVazio(matricula)) {
+            if(S_Generico.campoVazio(matricula) && isAdmin) {
                 podeSalvar = false;
                 mensagem += "Matrícula inválida";
             }
@@ -112,7 +113,7 @@ public class S_Usuario {
             if(!S_Generico.campoVazio(novaSenha)) {
                 usuario.setSenha(novaSenha);
             }
-            if(usuario.getOcupacao() == 1){
+            if(isAdmin){
                 usuario.setOcupacao(Long.parseLong(ocupacao));
                 usuario.setMatricula(Long.parseLong(matricula));
                 usuario.setAtivo(Boolean.parseBoolean(ativo));
