@@ -1,5 +1,6 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
+import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Resposta;
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Usuario;
 import jakarta.servlet.http.HttpServletRequest;
@@ -49,19 +50,21 @@ public class C_CadUsuario {
     }
 
     @PostMapping("/edit/usuario")
+    @ResponseBody
     // HttpServletRequest garante que a requisição veio do nosso servidor
     // value="matricula", required = false faz o parâmetro não ser obrigatório o seu envio
-    public void postEditUsuario(HttpServletRequest request,
-                                HttpSession session,
-                                @RequestParam("nome") String nome,
-                                @RequestParam("email") String email,
-                                @RequestParam("senhaAtual") String senhaAtual,
-                                @RequestParam("novaSenha") String novaSenha,
-                                @RequestParam("confSenha") String confSenha,
-                                @RequestParam(value="matricula", required = false) String matricula,
-                                @RequestParam(value="ocupacao", required = false) String ocupacao,
-                                @RequestParam(value="ativo", required = false) String ativo
+    public M_Resposta postEditUsuario(HttpServletRequest request,
+                                      HttpSession session,
+                                      @RequestParam("nome") String nome,
+                                      @RequestParam("email") String email,
+                                      @RequestParam("senhaAtual") String senhaAtual,
+                                      @RequestParam("novaSenha") String novaSenha,
+                                      @RequestParam("confSenha") String confSenha,
+                                      @RequestParam(value="matricula", required = false) String matricula,
+                                      @RequestParam(value="ocupacao", required = false) String ocupacao,
+                                      @RequestParam(value="ativo", required = false) String ativo
                                 ) {
-        int a = 1;
+        Object usuario = session.getAttribute("usuario");
+        return S_Usuario.salvarEditUsuario(nome, matricula, email, ocupacao, senhaAtual, novaSenha, confSenha, ativo, (M_Usuario) usuario);
     }
 }

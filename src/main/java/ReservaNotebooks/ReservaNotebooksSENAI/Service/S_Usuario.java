@@ -1,8 +1,8 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Service;
 
+import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Resposta;
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import ReservaNotebooks.ReservaNotebooksSENAI.Repository.R_Usuario;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -75,5 +75,59 @@ public class S_Usuario {
             }
         }
         return mensagem;
+    }
+
+    public static M_Resposta salvarEditUsuario(String nome, String matricula, String email, String ocupacao, String senhaAtual,
+                                         String novaSenha, String confSenha, String ativo, M_Usuario usuario) {
+
+        boolean podeSalvar = true;
+        String mensagem = "";
+        matricula = S_Generico.limparNumero(matricula);
+
+        if(senhaAtual.equals(usuario.getSenha())) {
+            if(S_Generico.campoVazio(nome)) {
+                podeSalvar = false;
+                mensagem += "O nome precisa ser preenchido";
+            }
+            if(S_Generico.campoVazio(matricula)) {
+                podeSalvar = false;
+                mensagem += "Matrícula inválida";
+            }
+            if(S_Generico.campoVazio(email)){
+                podeSalvar = false;
+                mensagem += "e-mail precisa ser preenchido";
+            }
+            if(!novaSenha.equals(confSenha)) {
+                podeSalvar = false;
+                mensagem += "Nova senha e confirmação de nova senha precisam ser iguais";
+            }
+        } else {
+            podeSalvar = false;
+            mensagem += "Senha inválida";
+        }
+
+        if(podeSalvar){
+            usuario.setNome(nome);
+            usuario.setEmail(email);
+            if(!S_Generico.campoVazio(novaSenha)) {
+                usuario.setSenha(novaSenha);
+            }
+            if(usuario.getOcupacao() == 1){
+                usuario.setOcupacao(Long.parseLong(ocupacao));
+                usuario.setMatricula(Long.parseLong(matricula));
+                usuario.setAtivo(Boolean.parseBoolean(ativo));
+            }
+            try{
+                r_usuario.save(usuario); // O Spring Boot busca se há um id deste dado. Se tiver, o framework fará a atualização. Caso
+                // não exista, será criado um novo registro.
+                // Save pode ser usado tanto para updates quanto para inserts. Para atualizar, basta existir o id
+                // Essa identificação é feita pela própria session
+                mensagem += "Atualização concluída!";
+            } catch (DataIntegrityViolationException e) {
+                podeSalvar = false;
+                mensagem += "Falha ao atualizar os dados";
+            }
+        }
+        return new M_Resposta(podeSalvar, mensagem);
     }
 }
