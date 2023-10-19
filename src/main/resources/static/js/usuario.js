@@ -47,6 +47,7 @@ function salvarEditUsuario(){
         },
         success: function(data){
             if(data.sucesso){
+                $("#boasVindas").text("Bem-vindo(a): " + nome);
                 alert("Concluído: " + data.mensagem);
             } else {
                 alert("Erro: " + data.mensagem);
