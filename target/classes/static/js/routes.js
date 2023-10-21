@@ -33,14 +33,3 @@ function controleDeRotas(url){
         });
     }
 }
-
-
-
-
-//$("#btnSair").click(function(event) {
-//    event.preventDefault(); // Isso previne a ação padrão do link
-//    controleRotasGet($(this).attr("href"));
-//}
-//
-////Este trecho do notebook.html fica aqui. Será necessário fazer um case:
-//$("#enviar").click(enviaCadastroNotebook);
