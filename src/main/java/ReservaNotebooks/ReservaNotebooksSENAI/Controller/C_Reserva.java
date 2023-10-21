@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class C_ReservaNotebook {
+public class C_Reserva {
 
-    @PostMapping("/reserva/notebook")
+    @PostMapping("/reserva")
     @ResponseBody
 
     public String postReservaNotebook(@RequestParam("data") String data,
                                       @RequestParam("quantidade") String quantidade) {
 
-        return "S_ReservaNotebook";
+        return "endereço do Service";
     }
 }

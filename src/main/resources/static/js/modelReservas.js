@@ -1,12 +1,12 @@
 function modelReservas() {
-    let data = $("#data").val();
+    let dataReserva = $("#dataReserva").val();
     let quantidade = $("#quantidade").val();
 
     $.ajax({
         type: "POST",
-        url: "/reserva/notebook",
+        url: "/reserva/",
         data: {
-            data: data,
+            dataReserva: dataReserva,
             quantidade: quantidade
         },
         success: function(data){
