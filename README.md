@@ -37,7 +37,7 @@ CREATE TABLE reserva (
 	hora_fin time not null);
 
 CREATE TABLE reserva_notes (
-	id_notes bigint not null,
+	id_note bigint not null,
 	foreign key (id_note) references notebook(id),
 	id_reserva bigint not null,
 	foreign key (id_reserva) references reserva (id),
