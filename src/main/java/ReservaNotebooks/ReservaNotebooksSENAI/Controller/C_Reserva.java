@@ -1,5 +1,7 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
+import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Reserva;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,10 +12,10 @@ public class C_Reserva {
 
     @PostMapping("/reserva")
     @ResponseBody
+    public String postReservaNotebook(@RequestParam("quantidade") String quantidade,
+                                      @RequestParam("data_ini") String data_ini,
+                                      @RequestParam("data_fin") String data_fin) {
 
-    public String postReservaNotebook(@RequestParam("data") String data,
-                                      @RequestParam("quantidade") String quantidade) {
-
-        return "endereço do Service";
+        return S_Reserva.cadastrarReservaNotebook(quantidade, data_ini, data_fin);
     }
 }

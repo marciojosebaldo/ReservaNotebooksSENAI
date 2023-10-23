@@ -32,9 +32,12 @@ CREATE TABLE reserva (
 	id Serial primary key,
 	id_usuario bigint not null, 
 	foreign key (id_usuario) references usuario(id),
-	data date not null,
+	quantidade bigint not null,
+	data_ini date not null,
+	data_fin date not null,
 	hora_ini time not null,
-	hora_fin time not null);
+	hora_fin time not null,
+	hora_reg time not null);
 
 CREATE TABLE reserva_notes (
 	id_note bigint not null,

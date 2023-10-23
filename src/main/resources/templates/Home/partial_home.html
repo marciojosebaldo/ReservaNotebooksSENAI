@@ -27,18 +27,30 @@
                                     </button>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6">
-                                        <div class="input-group">
-                                            <input id="dataReserva" type="date" class="form-control"
-                                                   placeholder="Data">
+                                    <div class="col-6 mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="repetir">
+                                            <label class="form-check-label" for="repetir">
+                                                Repetir até data final?
+                                            </label>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-6 mb-3">
                                         <div class="input-group">
                                             <input id="quantidade" type="number" class="form-control"
                                                    placeholder="Quantidade de Notebooks"
                                                    aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="input-group">
+                                            <input id="data_ini" type="datetime-local" class="form-control"
+                                                   placeholder="Data">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <input id="data_fin" type="datetime-local" class="form-control"
+                                               placeholder="Data">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
