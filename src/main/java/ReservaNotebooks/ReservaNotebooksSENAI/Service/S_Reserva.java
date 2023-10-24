@@ -18,10 +18,6 @@ public class S_Reserva {
         boolean podeSalvar = true;
         String mensagem = "";
 
-        // Model e repository prontos. Falta o Service e o Controller para concluir o salvamento
-        // O modal na view também precisa ser editada
-        // Precisará também editar o modalReservas.js
-
 //        r_reserva.save(quantidade, data_ini, data_fin);
 
         return "";
