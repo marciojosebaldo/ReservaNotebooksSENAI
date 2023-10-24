@@ -15,10 +15,11 @@ public class S_Reserva {
 
     public static String cadastrarReservaNotebook(Long idUsuario, String quantidade, String data_ini,
                                                   String data_fin){
+
+
+
         boolean podeSalvar = true;
         String mensagem = "";
-
-//        r_reserva.save(quantidade, data_ini, data_fin);
 
         return "";
     }

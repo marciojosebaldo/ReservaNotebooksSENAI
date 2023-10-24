@@ -12,11 +12,8 @@ public class M_Usuario {
     private Long ocupacao;
     private Long matricula;
     private String email;
-
     private String senha;
-
     private boolean ativo;
-
     public Long getId() {
         return id;
     }

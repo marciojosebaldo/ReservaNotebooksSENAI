@@ -27,8 +27,8 @@ function controleDeRotas(url){
             });
         break;
 
-        // Precisa routear a home e a partialHome para vincular o recarregamento da home com o botão #salvar do JQuery
-        case "/reserva":
+//        Precisa routear a home e a partialHome para vincular o recarregamento da home com o botão #salvar do JQuery
+        case "/Home":
             $.get(url, function(data){
                 $('#mainContainer').html(data);
                 $("#salvar").click(modalReservas);

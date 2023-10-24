@@ -1,9 +1,7 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
-import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Reserva;
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import ReservaNotebooks.ReservaNotebooksSENAI.Service.S_Reserva;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -4,7 +4,7 @@ function modalReservas() {
 //    let repetir = $("#repetir").val();
     let quantidade = $("#quantidade").val();
     let data_ini = $("#data_ini").val();
-    let data_fin = $("data_fin").val();
+    let data_fin = $("#data_fin").val();
 
     $.ajax({
         type: "POST",
