@@ -15,7 +15,7 @@ public class S_Reserva {
     }
 
     public static String cadastrarReservaNotebook(Long idUsuario, String quantidade, String data_ini,
-                                                  String data_fin){
+                                                  String data_fin, String hora_ini, String hora_fin){
         boolean podeSalvar = true;
         String mensagem = "";
 
@@ -25,8 +25,10 @@ public class S_Reserva {
         m_reserva.setQuantidade(Long.parseLong(quantidade));
         m_reserva.setData_ini(data_ini);
         m_reserva.setData_fim(data_fin);
+        m_reserva.setHora_ini(hora_ini);
+        m_reserva.setHora_fin(hora_fin);
 
-
+        r_reserva.save(m_reserva);
 
         return "";
     }

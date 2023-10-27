@@ -16,6 +16,8 @@ public class C_Reserva {
     public String postReservaNotebook(@RequestParam("quantidade") String quantidade,
                                       @RequestParam("data_ini") String data_ini,
                                       @RequestParam("data_fin") String data_fin,
+                                      @RequestParam("hora_ini") String hora_ini,
+                                      @RequestParam("hora_fin") String hora_fin,
                                       HttpSession session) {
 
         M_Usuario usuario = (M_Usuario) session.getAttribute("usuario");
