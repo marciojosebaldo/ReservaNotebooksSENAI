@@ -1,7 +1,6 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Service;
 
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Reserva;
-import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import ReservaNotebooks.ReservaNotebooksSENAI.Repository.R_Reserva;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,7 @@ public class S_Reserva {
 
     private static R_Reserva r_reserva;
 
-    public S_Reserva(R_Reserva r_reservaNotebook){
+    public S_Reserva(R_Reserva r_reserva){
         this.r_reserva = r_reserva;
     }
 
@@ -26,7 +25,7 @@ public class S_Reserva {
         m_reserva.setId_usuario(idUsuario);
         m_reserva.setQuantidade(Long.parseLong(quantidade));
         m_reserva.setData_ini(data_ini);
-        m_reserva.setData_fim(data_fin);
+        m_reserva.setData_fin(data_fin);
         m_reserva.setHora_ini(hora_ini);
         m_reserva.setHora_fin(hora_fin);
         m_reserva.setHora_reg(S_Generico.data_hora_reg());

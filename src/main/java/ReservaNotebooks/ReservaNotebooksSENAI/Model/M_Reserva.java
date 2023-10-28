@@ -3,7 +3,7 @@ package ReservaNotebooks.ReservaNotebooksSENAI.Model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "reserva_note")
+@Table(name = "reserva")
 public class M_Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +12,7 @@ public class M_Reserva {
     private Long id_usuario;
     private Long quantidade;
     private String data_ini;
-    private String data_fim;
+    private String data_fin;
     private String hora_ini;
     private String hora_fin;
     private String hora_reg;
@@ -49,12 +49,12 @@ public class M_Reserva {
         this.data_ini = data_ini;
     }
 
-    public String getData_fim() {
-        return data_fim;
+    public String getData_fin() {
+        return data_fin;
     }
 
-    public void setData_fim(String data_fim) {
-        this.data_fim = data_fim;
+    public void setData_fin(String data_fin) {
+        this.data_fin = data_fin;
     }
 
     public String getHora_ini() {
