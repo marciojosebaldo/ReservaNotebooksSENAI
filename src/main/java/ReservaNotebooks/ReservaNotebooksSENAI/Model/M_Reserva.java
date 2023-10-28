@@ -15,8 +15,7 @@ public class M_Reserva {
     private String data_fim;
     private String hora_ini;
     private String hora_fin;
-
-    private String hora_reg;
+    private String data_hora_reg;
 
     public Long getId() {
         return id;
@@ -74,11 +73,11 @@ public class M_Reserva {
         this.hora_fin = hora_fin;
     }
 
-    public String getHora_reg() {
-        return hora_reg;
+    public String getdata_hora_reg() {
+        return data_hora_reg;
     }
 
-    public void setHora_reg(String hora_reg) {
-        this.hora_reg = hora_reg;
+    public void setdata_hora_reg(String data_hora_reg) {
+        this.data_hora_reg = data_hora_reg;
     }
 }
