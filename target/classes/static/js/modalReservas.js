@@ -13,8 +13,6 @@ function modalReservas() {
     let hora_ini = data_Ini.toLocaleTimeString();
     let hora_fin = data_Fin.toLocaleTimeString();
 
-//    Conferir acima se o que foi feito dará certo
-
     $.ajax({
         type: "POST",
         url: "/reserva",
@@ -29,7 +27,7 @@ function modalReservas() {
             alert(data);
         },
         error: function(){
-            alert("Falha ao salvar os dados")
+            alert("Falha na comunicação com o servidor")
         }
     });
 }

@@ -1,6 +1,7 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Service;
 
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Reserva;
+import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Usuario;
 import ReservaNotebooks.ReservaNotebooksSENAI.Repository.R_Reserva;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -22,14 +23,13 @@ public class S_Reserva {
         // Falta criar o horário do registro
 
         M_Reserva m_reserva = new M_Reserva();
-
         m_reserva.setId_usuario(idUsuario);
         m_reserva.setQuantidade(Long.parseLong(quantidade));
         m_reserva.setData_ini(data_ini);
         m_reserva.setData_fim(data_fin);
         m_reserva.setHora_ini(hora_ini);
         m_reserva.setHora_fin(hora_fin);
-        m_reserva.setdata_hora_reg(S_Generico.data_hora_reg());
+        m_reserva.setHora_reg(S_Generico.data_hora_reg());
 
         try {
             r_reserva.save(m_reserva);
@@ -38,8 +38,6 @@ public class S_Reserva {
             mensagem += "Falha ao salvar os dados";
         }
 
-        r_reserva.save(m_reserva);
-
-        return "Dados salvos com sucesso";
+        return mensagem;
     }
 }
