@@ -3,10 +3,15 @@ $("#salvar").click(modalReservas);
 function modalReservas() {
 //    let repetir = $("#repetir").val();
     let quantidade = $("#quantidade").val();
-    let data_ini = $("#data_ini").val().toLocaleDateString;
-    let hora_ini = $("#data_ini").val().toLocaleTimeString;
-    let data_fin = $("#data_fin").val().toLocaleDateString;
-    let hora_fin = $("#data_fin").val().toLocaleTimeString;
+
+    let data_Ini = new Date($("#data_ini").val());
+    let data_Fin = new Date($("#data_fin").val());
+
+    let data_ini = data_Ini.toLocaleDateString();
+    let data_fin = data_Fin.toLocaleDateString();
+
+    let hora_ini = data_Ini.toLocaleTimeString();
+    let hora_fin = data_Fin.toLocaleTimeString();
 
 //    Conferir acima se o que foi feito dará certo
 

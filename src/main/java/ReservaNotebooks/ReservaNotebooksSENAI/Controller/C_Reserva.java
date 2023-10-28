@@ -23,6 +23,6 @@ public class C_Reserva {
         M_Usuario usuario = (M_Usuario) session.getAttribute("usuario");
         Long idUsuario = usuario.getId();
 
-        return S_Reserva.cadastrarReservaNotebook(idUsuario, quantidade, data_ini, data_fin);
+        return S_Reserva.cadastrarReservaNotebook(idUsuario, quantidade, data_ini, data_fin, hora_ini, hora_fin);
     }
 }
