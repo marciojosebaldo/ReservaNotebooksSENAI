@@ -37,7 +37,7 @@ CREATE TABLE reserva (
 	data_fin date not null,
 	hora_ini time not null,
 	hora_fin time not null,
-	hora_reg time not null);
+	hora_reg date not null);
 
 CREATE TABLE reserva_notes (
 	id_note bigint not null,

@@ -22,7 +22,7 @@ public class S_Generico {
 
     public static String dataAtualRegistro(){
         LocalDateTime dataAtualRegistro = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String dataAtual = dataAtualRegistro.format(formatter);
         return dataAtual;
     }
@@ -31,7 +31,7 @@ public class S_Generico {
     @Test
     public void TesteDataAtualRegistro(){
         LocalDateTime dataAtual = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String dataAtualEsperada = dataAtual.format(formatter);
         String dataAtualRegistro = S_Generico.dataAtualRegistro();
 

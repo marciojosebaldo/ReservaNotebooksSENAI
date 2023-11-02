@@ -26,9 +26,6 @@ public class S_Reserva {
         m_reserva.setData_fin(data_fin);
         m_reserva.setHora_ini(hora_ini);
         m_reserva.setHora_fin(hora_fin);
-
-        // setHora_reg não está funcionando
-
         m_reserva.setHora_reg(S_Generico.dataAtualRegistro());
 
         try {
