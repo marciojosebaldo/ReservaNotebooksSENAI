@@ -19,8 +19,6 @@ public class S_Reserva {
         boolean podeSalvar = true;
         String mensagem = "";
 
-        // Falta criar o horário do registro
-
         M_Reserva m_reserva = new M_Reserva();
         m_reserva.setId_usuario(idUsuario);
         m_reserva.setQuantidade(Long.parseLong(quantidade));
@@ -28,7 +26,10 @@ public class S_Reserva {
         m_reserva.setData_fin(data_fin);
         m_reserva.setHora_ini(hora_ini);
         m_reserva.setHora_fin(hora_fin);
-        m_reserva.setHora_reg(S_Generico.data_hora_reg());
+
+        // setHora_reg não está funcionando
+
+        m_reserva.setHora_reg(S_Generico.dataAtualRegistro());
 
         try {
             r_reserva.save(m_reserva);
