@@ -2,6 +2,8 @@ package ReservaNotebooks.ReservaNotebooksSENAI.Model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "reserva")
 public class M_Reserva {
@@ -11,7 +13,7 @@ public class M_Reserva {
     private Long id;
     private Long id_usuario;
     private Long quantidade;
-    private String data_ini;
+    private LocalDate data_ini;
     private String data_fin;
     private String hora_ini;
     private String hora_fin;
@@ -41,11 +43,11 @@ public class M_Reserva {
         this.quantidade = quantidade;
     }
 
-    public String getData_ini() {
+    public LocalDate getData_ini() {
         return data_ini;
     }
 
-    public void setData_ini(String data_ini) {
+    public void setData_ini(LocalDate data_ini) {
         this.data_ini = data_ini;
     }
 

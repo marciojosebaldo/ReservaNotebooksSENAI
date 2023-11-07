@@ -22,7 +22,11 @@ public class S_Reserva {
         M_Reserva m_reserva = new M_Reserva();
         m_reserva.setId_usuario(idUsuario);
         m_reserva.setQuantidade(Long.parseLong(quantidade));
+
+        // Converter String para LocalDate
+        S_Generico.StringParaDate(data_ini);
         m_reserva.setData_ini(data_ini);
+
         m_reserva.setData_fin(data_fin);
         m_reserva.setHora_ini(hora_ini);
         m_reserva.setHora_fin(hora_fin);

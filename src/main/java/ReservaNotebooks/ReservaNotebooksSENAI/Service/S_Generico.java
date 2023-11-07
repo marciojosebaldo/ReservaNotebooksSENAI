@@ -1,8 +1,12 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Service;
 
 import org.springframework.stereotype.Service;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,4 +41,11 @@ public class S_Generico {
 
         assertEquals(dataAtualEsperada, dataAtualRegistro);
     }
+
+    public static LocalDate StringParaDate(String data){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataFormatada = LocalDate.parse(data, formato);
+        return dataFormatada;
+    }
+
 }
