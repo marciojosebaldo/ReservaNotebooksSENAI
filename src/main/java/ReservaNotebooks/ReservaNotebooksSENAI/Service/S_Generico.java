@@ -51,7 +51,7 @@ public class S_Generico {
     }
 
     public static LocalDate StringParaHora(String hora){
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH/mm");
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
         LocalDate horaFormatada = LocalDate.parse(hora, formato);
         return horaFormatada;
     }
