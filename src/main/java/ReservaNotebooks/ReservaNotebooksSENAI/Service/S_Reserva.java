@@ -24,12 +24,13 @@ public class S_Reserva {
         m_reserva.setQuantidade(Long.parseLong(quantidade));
 
         // Converter String para LocalDate
-        S_Generico.StringParaDate(data_ini);
-        m_reserva.setData_ini(data_ini);
+        m_reserva.setData_ini(S_Generico.StringParaDate(data_ini));
+        m_reserva.setData_fin(S_Generico.StringParaDate(data_fin));
 
-        m_reserva.setData_fin(data_fin);
-        m_reserva.setHora_ini(hora_ini);
-        m_reserva.setHora_fin(hora_fin);
+        // Precisa converter a String para hora
+        m_reserva.setHora_ini(S_Generico.StringParaHora(hora_ini));
+        m_reserva.setHora_fin(S_Generico.StringParaHora(hora_fin));
+
         m_reserva.setHora_reg(S_Generico.dataAtualRegistro());
 
         try {

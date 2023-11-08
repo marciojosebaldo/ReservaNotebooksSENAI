@@ -14,9 +14,9 @@ public class M_Reserva {
     private Long id_usuario;
     private Long quantidade;
     private LocalDate data_ini;
-    private String data_fin;
-    private String hora_ini;
-    private String hora_fin;
+    private LocalDate data_fin;
+    private LocalDate hora_ini;
+    private LocalDate hora_fin;
     private String hora_reg;
 
     public Long getId() {
@@ -51,27 +51,27 @@ public class M_Reserva {
         this.data_ini = data_ini;
     }
 
-    public String getData_fin() {
+    public LocalDate getData_fin() {
         return data_fin;
     }
 
-    public void setData_fin(String data_fin) {
+    public void setData_fin(LocalDate data_fin) {
         this.data_fin = data_fin;
     }
 
-    public String getHora_ini() {
+    public LocalDate getHora_ini() {
         return hora_ini;
     }
 
-    public void setHora_ini(String hora_ini) {
+    public void setHora_ini(LocalDate hora_ini) {
         this.hora_ini = hora_ini;
     }
 
-    public String getHora_fin() {
+    public LocalDate getHora_fin() {
         return hora_fin;
     }
 
-    public void setHora_fin(String hora_fin) {
+    public void setHora_fin(LocalDate hora_fin) {
         this.hora_fin = hora_fin;
     }
 

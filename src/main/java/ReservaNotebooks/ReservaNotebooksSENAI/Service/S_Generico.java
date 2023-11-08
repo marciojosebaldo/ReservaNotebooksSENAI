@@ -1,5 +1,6 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Service;
 
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -7,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.TimeZone;
 
 import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,6 +48,12 @@ public class S_Generico {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dataFormatada = LocalDate.parse(data, formato);
         return dataFormatada;
+    }
+
+    public static LocalDate StringParaHora(String hora){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH/mm");
+        LocalDate horaFormatada = LocalDate.parse(hora, formato);
+        return horaFormatada;
     }
 
 }
