@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.TimeZone;
@@ -50,9 +51,9 @@ public class S_Generico {
         return dataFormatada;
     }
 
-    public static LocalDateTime StringParaHora(String hora){
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
-        LocalDateTime horaFormatada = LocalDateTime.parse(hora.format(String.valueOf(formato)));
+    public static LocalTime StringParaHora(String hora){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalTime horaFormatada = LocalTime.parse(hora, formato);
         return horaFormatada;
     }
 }

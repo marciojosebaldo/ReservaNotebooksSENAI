@@ -3,6 +3,8 @@ package ReservaNotebooks.ReservaNotebooksSENAI.Model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "reserva")
@@ -15,8 +17,8 @@ public class M_Reserva {
     private Long quantidade;
     private LocalDate data_ini;
     private LocalDate data_fin;
-    private LocalDate hora_ini;
-    private LocalDate hora_fin;
+    private LocalTime hora_ini;
+    private LocalTime hora_fin;
     private String hora_reg;
 
     public Long getId() {
@@ -59,19 +61,19 @@ public class M_Reserva {
         this.data_fin = data_fin;
     }
 
-    public LocalDate getHora_ini() {
+    public LocalTime getHora_ini() {
         return hora_ini;
     }
 
-    public void setHora_ini(LocalDate hora_ini) {
+    public void setHora_ini(LocalTime hora_ini) {
         this.hora_ini = hora_ini;
     }
 
-    public LocalDate getHora_fin() {
+    public LocalTime getHora_fin() {
         return hora_fin;
     }
 
-    public void setHora_fin(LocalDate hora_fin) {
+    public void setHora_fin(LocalTime hora_fin) {
         this.hora_fin = hora_fin;
     }
 
