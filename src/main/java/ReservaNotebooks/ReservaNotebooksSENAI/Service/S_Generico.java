@@ -50,10 +50,9 @@ public class S_Generico {
         return dataFormatada;
     }
 
-    public static LocalDate StringParaHora(String hora){
+    public static LocalDateTime StringParaHora(String hora){
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
-        Date horaFormatada = new SimpleDateFormat("hh:mm").parse(hora);
+        LocalDateTime horaFormatada = LocalDateTime.parse(hora.format(String.valueOf(formato)));
         return horaFormatada;
     }
-
 }
