@@ -19,7 +19,7 @@ public class M_Reserva {
     private LocalDate data_fin;
     private LocalTime hora_ini;
     private LocalTime hora_fin;
-    private String hora_reg;
+    private LocalDate hora_reg;
 
     public Long getId() {
         return id;
@@ -77,11 +77,11 @@ public class M_Reserva {
         this.hora_fin = hora_fin;
     }
 
-    public String getHora_reg() {
+    public LocalDate getHora_reg() {
         return hora_reg;
     }
 
-    public void setHora_reg(String hora_reg) {
+    public void setHora_reg(LocalDate hora_reg) {
         this.hora_reg = hora_reg;
     }
 }
