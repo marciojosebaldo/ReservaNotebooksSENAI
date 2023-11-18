@@ -1,6 +1,7 @@
 package ReservaNotebooks.ReservaNotebooksSENAI.Controller;
 
 import ReservaNotebooks.ReservaNotebooksSENAI.Model.M_Reserva;
+import ReservaNotebooks.ReservaNotebooksSENAI.Repository.R_Reserva;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ public class C_Home {
         if (session.getAttribute("usuario") != null) {
             // Duas últimas linhas estão abaixo do tbody da view do home.html. Servem para invocar os dados salvos
             // Precisa salvar os dados
+            // Está sendo criado o método buscarReservasNotebook em S_Reserva
             List<M_Reserva> listaDeReservas = ;
             model.addAttribute("listaDeReservas", listaDeReservas);
 

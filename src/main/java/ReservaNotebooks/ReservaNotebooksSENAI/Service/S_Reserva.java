@@ -5,6 +5,8 @@ import ReservaNotebooks.ReservaNotebooksSENAI.Repository.R_Reserva;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class S_Reserva {
 
@@ -41,5 +43,9 @@ public class S_Reserva {
         }
 
         return mensagem;
+    }
+
+    public static List buscarReservasNotebook(Long idUsuario) {
+        return null;
     }
 }
