@@ -174,10 +174,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Márcio</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                    <!--Código adicionado abaixo e para puxar a lista de reservas. Está linkado com o mótodo
+                    getHome de C_Home: -->
+                    <!--Thymeleaf para iterar sobre a lista de reservas-->
+                    <tr th:each="reserva : ${listaDeReservas}">
+                        <td th:text="${reserva.data_ini}"></td>
+                        <td th:text="${reserva.quantidade}"></td>
+                        <td th:text="${reserva.hora_reg}"></td>
                     </tr>
                     </tbody>
                 </table>
