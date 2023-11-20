@@ -46,3 +46,6 @@ CREATE TABLE reserva_notes (
 	foreign key (id_reserva) references reserva (id),
 	primary key(id_note,id_reserva)
 );
+
+INSERT INTO reserva (id_usuario, quantidade, data_ini, data_fin, hora_ini, hora_fin, hora_reg) 
+VALUES (1, 10, '10/10/2023', '10/10/2023', '7:00', '12:00', '09/10/2023');

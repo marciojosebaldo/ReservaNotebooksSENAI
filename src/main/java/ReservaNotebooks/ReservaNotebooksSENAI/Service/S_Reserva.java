@@ -45,7 +45,7 @@ public class S_Reserva {
         return mensagem;
     }
 
-    public static List buscarReservasNotebook(Long idUsuario) {
-        return null;
+    public static List<M_Reserva> buscarReservasNotebook() {
+        return r_reserva.buscaReserva();
     }
 }
