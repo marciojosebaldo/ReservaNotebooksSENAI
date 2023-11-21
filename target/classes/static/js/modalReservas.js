@@ -25,6 +25,7 @@ function modalReservas() {
         },
         success: function(data){
             alert(data);
+            location.reload();
         },
         error: function(){
             alert("Falha na comunicação com o servidor")
