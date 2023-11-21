@@ -19,7 +19,7 @@ public class C_Home {
             // Duas últimas linhas estão abaixo do tbody da view do home.html. Servem para invocar os dados salvos
             // Precisa salvar os dados
             // Está sendo criado o método buscarReservasNotebook em S_Reserva
-            List<M_Reserva> listaDeReservas = S_Reserva.buscarReservasNotebook();
+            List<M_Reserva> listaDeReservas = S_Reserva.buscarReservasNotebook(); // Esta linha poderia ser colocada após a vírgula da linha abaixo, ou seja, após (...)"listaDeReservas",
             model.addAttribute("listaDeReservas", listaDeReservas);
 
             model.addAttribute("usuario", session.getAttribute("usuario"));
